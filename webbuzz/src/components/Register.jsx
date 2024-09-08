@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import TournamentDetails from './TournamentDetails';
 
 export default function Register() {
@@ -15,30 +14,6 @@ export default function Register() {
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 h-14 flex items-center bg-primary text-primary-foreground">
-        <Link href="#" className="flex items-center justify-center" prefetch={false}>
-          <BirdIcon className="h-6 w-6" />
-          <span className="sr-only">XYZ Cricket Organization</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            Tournaments
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            Schedule
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            Trivia
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium hover:underline underline-offset-4 text-secondary"
-            prefetch={false}
-          >
-            Register
-          </Link>
-        </nav>
-      </header>
       <main className="flex-1">
         <section className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
           <div className="container px-4 md:px-6">
@@ -66,42 +41,44 @@ export default function Register() {
                       <option value="test">Test Tournament</option>
                     </select>
                   </div>
-                  <TournamentDetails selectedTournament={selectedTournament}/>
-                  <div className="grid gap-2">
-                    <label htmlFor="team-name">Team Name</label>
-                    <input
-                      id="team-name"
-                      className="px-3 py-2 rounded-sm"
-                      type="text"
-                      placeholder="Enter your team name"
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <label htmlFor="city">City</label>
-                    <input
-                      id="city"
-                      className="px-3 py-2 rounded-sm"
-                      type="text"
-                      placeholder="Enter your city"
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      id="email"
-                      className="px-3 py-2 rounded-sm"
-                      type="text"
-                      placeholder="Enter your Email"
-                    />
-                  </div>
-                  <div className="grid gap-2">
-                    <label htmlFor="phone">Phone</label>
-                    <input
-                      id="phone"
-                      className="px-3 py-2 rounded-sm"
-                      type="text"
-                      placeholder="Enter your Phone Number"
-                    />
+                  <TournamentDetails selectedTournament={selectedTournament} />
+                  <div className='grid grid-cols-2 gap-3'>
+                    <div className="grid gap-2">
+                      <label htmlFor="team-name">Team Name</label>
+                      <input
+                        id="team-name"
+                        className="px-3 py-2 rounded-sm"
+                        type="text"
+                        placeholder="Enter your team name"
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <label htmlFor="city">City</label>
+                      <input
+                        id="city"
+                        className="px-3 py-2 rounded-sm"
+                        type="text"
+                        placeholder="Enter your city"
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <label htmlFor="email">Email</label>
+                      <input
+                        id="email"
+                        className="px-3 py-2 rounded-sm"
+                        type="text"
+                        placeholder="Enter your Email"
+                      />
+                    </div>
+                    <div className="grid gap-2">
+                      <label htmlFor="phone">Phone</label>
+                      <input
+                        id="phone"
+                        className="px-3 py-2 rounded-sm"
+                        type="text"
+                        placeholder="Enter your Phone Number"
+                      />
+                    </div>
                   </div>
                   <div className="grid gap-2">
                     <div className="grid gap-2">
@@ -113,7 +90,7 @@ export default function Register() {
                         placeholder="Enter captain name"
                       />
                     </div>
-                    <div className="grid gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                       {Array.from({ length: 10 }, (_, i) => (
                         <div key={i} className="grid gap-2">
                           <label htmlFor={`player-${i + 2}`}>Player {i + 2}</label>
@@ -138,7 +115,7 @@ export default function Register() {
                       ))}
                     </div>
                   </div>
-                  <button type="submit" className="mt-2 bg-black text-white p-3 rounded-sm">
+                  <button type="submit" className="mt-2 bg-black text-white w-40 text-center block m-auto p-3 rounded-sm">
                     Register Now
                   </button>
                 </form>
@@ -148,29 +125,5 @@ export default function Register() {
         </section>
       </main>
     </div>
-  );
-}
-
-function BirdIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 7h.01" />
-      <path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20" />
-      <path d="m20 7 2 .5-2 .5" />
-      <path d="M10 18v3" />
-      <path d="M14 17.75V21" />
-      <path d="M7 18a6 6 0 0 0 3.84-10.61" />
-    </svg>
   );
 }

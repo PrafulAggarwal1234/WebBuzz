@@ -5,6 +5,7 @@ export default function Schedule() {
   const [selectedTournament, setselectedTournament] = useState({})
   const [selectedRound, setselectedRound] = useState(0)
   const [tournamentsData, setTournamentsData] = useState([])
+  const [allTournaments, setAllTournaments] = useState([])
   const [matchesData, setMatchesData] = useState([])
   const [activeMatchId, setActiveMatchId] = useState(null);
 
@@ -809,8 +810,16 @@ export default function Schedule() {
     const data = await response.json()
     // const data=data_2
     setTournamentsData(data)
+
+    setAllTournaments(data)
+    console.log(data);
+
+    setselectedTournament(data[0]);
+
     setselectedTournament(data[0]._id);
+
     setMatchesData(data[0].matches);
+
   }
 
   useEffect(() => {
@@ -826,9 +835,11 @@ export default function Schedule() {
     // setMatchesData(selectedTournament?.matches?.filter(match => (match selectedRound == 0 || match.round === selectedRound)))
   }, [selectedTournament, selectedRound])
 
-  console.log(selectedTournament);
 
-
+  const handleChange1 = (e) => {
+    setselectedTournament(e.target.value)
+    setTournamentsData(allTournaments)
+  }
   const rounds = [
     { value: 0, label: "All Rounds" },
     { value: 1, label: "Group Stage" },
@@ -837,30 +848,6 @@ export default function Schedule() {
   ]
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 h-14 flex items-center bg-primary text-primary-foreground">
-        <Link href="#" className="flex items-center justify-center" prefetch={false}>
-          <BirdIcon className="h-6 w-6" />
-          <span className="sr-only">XYZ Cricket Organization</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            Tournaments
-          </Link>
-          <Link
-            href="#"
-            className="text-sm font-medium hover:underline underline-offset-4 text-secondary"
-            prefetch={false}
-          >
-            Schedule
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            Trivia
-          </Link>
-          <Link href="#" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            Register
-          </Link>
-        </nav>
-      </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
@@ -872,7 +859,7 @@ export default function Schedule() {
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <select value={selectedTournament} onChange={(e) => setselectedTournament(e.target.value)}>
+                <select value={selectedTournament} onChange={handleChange1}>
                   {tournamentsData.length > 0 && tournamentsData?.map((tournament) => (
                     <option key={tournament._id} value={tournament._id}>
                       {tournament.name}
@@ -949,17 +936,6 @@ export default function Schedule() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-muted-foreground">&copy; 2024 XYZ Cricket Organization. All rights reserved.</p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-            Terms of Service
-          </Link>
-          <Link href="#" className="text-xs hover:underline underline-offset-4" prefetch={false}>
-            Privacy
-          </Link>
-        </nav>
-      </footer>
     </div>
   )
 }

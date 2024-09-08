@@ -1,65 +1,38 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function Homepage() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <header className="px-4 lg:px-6 h-14 flex items-center bg-primary text-primary-foreground">
-        <Link to="#" className="flex items-center justify-center" >
-          <BirdIcon className="h-6 w-6" />
-          <span className="sr-only">XYZ Cricket Organization</span>
-        </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link to="#" className="text-sm font-medium hover:underline underline-offset-4" >
-            Tournaments
-          </Link>
-          <Link to="#" className="text-sm font-medium hover:underline underline-offset-4" >
-            Schedule
-          </Link>
-          <Link to="#" className="text-sm font-medium hover:underline underline-offset-4" >
-            Trivia
-          </Link>
-          <Link to="#" className="text-sm font-medium hover:underline underline-offset-4" >
-            Register
-          </Link>
-        </nav>
-      </header>
       <main className="flex-1">
-        <section className="w-full h-[100vh] py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground bg-[url('/stadium.jpg')] bg-cover bg-">
+        <section className="w-full h-[100vh] py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground bg-black flex items-center">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+            <div>
               <div className="flex flex-col justify-center space-y-4">
-                <div className="space-y-2">
+                <div className="space-y-2 text-center">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
                     Welcome to XYZ Cricket Organization
                   </h1>
-                  <p className="max-w-[600px] text-secondary-foreground md:text-xl">
+                  <p className="text-secondary-foreground md:text-xl">
                     Discover the thrill of cricket tournaments and join our community of passionate players and fans.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <div className="flex flex-col gap-2 min-[400px]:flex-row m-auto">
                   <Link
                     to="#"
                     className="inline-flex h-10 items-center justify-center rounded-md bg-secondary px-8 text-sm font-medium text-secondary-foreground shadow transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                    
+
                   >
                     Upcoming Events
                   </Link>
                   <Link
                     to="#"
-                    className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                    
+                    className="inline-flex h-10 items-center justify-center rounded-md bg-secondary px-8 text-sm font-medium text-secondary-foreground shadow transition-colors hover:bg-secondary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+
                   >
                     Register Now
                   </Link>
                 </div>
               </div>
-              {/* <img
-                src="/tournament.jpg"
-                width="550"
-                height="550"
-                alt="Cricket Banner"
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-              /> */}
             </div>
           </div>
         </section>
@@ -84,7 +57,7 @@ export default function Homepage() {
                       <Link
                         to="#"
                         className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        
+
                       >
                         Learn More
                       </Link>
@@ -97,7 +70,7 @@ export default function Homepage() {
                       <Link
                         to="#"
                         className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        
+
                       >
                         Learn More
                       </Link>
@@ -112,7 +85,7 @@ export default function Homepage() {
                       <Link
                         to="#"
                         className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        
+
                       >
                         Learn More
                       </Link>
@@ -122,13 +95,13 @@ export default function Homepage() {
               </div>
               <img
                 src="/cric_format.jpg"
-              
+
                 alt="Cricket Formats"
               />
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted flex justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -156,7 +129,7 @@ export default function Homepage() {
                       <Link
                         to="#"
                         className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        
+
                       >
                         View Details
                       </Link>
@@ -174,7 +147,7 @@ export default function Homepage() {
                       <Link
                         to="#"
                         className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        
+
                       >
                         View Details
                       </Link>
@@ -199,7 +172,7 @@ export default function Homepage() {
                       <Link
                         to="#"
                         className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        
+
                       >
                         View Scorecard
                       </Link>
@@ -217,7 +190,7 @@ export default function Homepage() {
                       <Link
                         to="#"
                         className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                        
+
                       >
                         View Scorecard
                       </Link>
@@ -239,8 +212,8 @@ export default function Homepage() {
               </div>
               <div className="mx-auto w-full max-w-sm space-y-2">
                 <form className="flex gap-2">
-                  <input type="text" placeholder="Enter your name" className="max-w-lg flex-1" />
-                  <button type="submit">Start Trivia</button>
+                  <input type="text" placeholder="Enter your name" className="max-w-lg px-3 py-2 border-2 border-black rounded-sm" />
+                  <button type="submit" className=" bg-black px-3 py-2 text-white rounded-sm hover:bg-gray-900 transition-all hover:transition-all">Start Trivia</button>
                 </form>
                 <p className="text-xs text-muted-foreground">Test your cricket knowledge and win exciting prizes.</p>
               </div>
