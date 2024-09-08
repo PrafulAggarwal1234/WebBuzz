@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 export default function Trivia() {
     return (
         <div className="flex flex-col min-h-[100dvh]">
@@ -73,7 +74,8 @@ export default function Trivia() {
                                         <h3 className="text-xl font-semibold">Cricket History</h3>
                                         <p className="text-muted-foreground">Questions about the origins and evolution of cricket.</p>
                                     </div>
-                                    <button className="border-2 rounded-full">Play Trivia</button>
+                                    <Link to="/playtrivia/cricketHistory"className="border-2 rounded-full">Play Trivia</Link>
+                                    {/* <button className="border-2 rounded-full">Play Trivia</button> */}
                                 </div>
                             </div>
                             <div className="border-2 rounded-xl p-5">
@@ -84,7 +86,8 @@ export default function Trivia() {
                                             Test your knowledge of famous cricketers and their achievements.
                                         </p>
                                     </div>
-                                    <button className="border-2 rounded-full">Play Trivia</button>
+                                    <Link to="/playtrivia/cricketPlayers"className="border-2 rounded-full">Play Trivia</Link>
+                                    {/* <button className="border-2 rounded-full">Play Trivia</button> */}
                                 </div>
                             </div>
                             <div className="border-2 rounded-xl p-5">
@@ -93,7 +96,8 @@ export default function Trivia() {
                                         <h3 className="text-xl font-semibold">Cricket Rules</h3>
                                         <p className="text-muted-foreground">Questions about the laws and regulations of the sport.</p>
                                     </div>
-                                    <button className="border-2 rounded-full">Play Trivia</button>
+                                    <Link to="/playtrivia/cricketRules"className="border-2 rounded-full">Play Trivia</Link>
+                                    {/* <button className="border-2 rounded-full">Play Trivia</button> */}
                                 </div>
                             </div>
                             <div className="border-2 rounded-xl p-5">
@@ -104,7 +108,8 @@ export default function Trivia() {
                                             Test your knowledge of major cricket tournaments and events.
                                         </p>
                                     </div>
-                                    <button className="border-2 rounded-full">Play Trivia</button>
+                                    <Link to="/playtrivia/cricketTournaments"className="border-2 rounded-full">Play Trivia</Link>
+                                    {/* <button className="border-2 rounded-full">Play Trivia</button> */}
                                 </div>
                             </div>
                         </div>

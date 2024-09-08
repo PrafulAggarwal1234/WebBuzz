@@ -5,6 +5,7 @@ import Schedule from './components/Schedule'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Trivia from './components/Trivia'
+import PlayTrivia from './components/Play'
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path='/trivia' element={<Trivia />} />
+          <Route path='/playtrivia/:category' element={<PlayTrivia/>} />
         </Routes>
         <Footer />
       </Router>
