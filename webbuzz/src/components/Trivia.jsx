@@ -116,11 +116,6 @@ export default function Trivia() {
                     </div>
                 </div>
             </main>
-            <footer className="bg-muted py-6 px-4 md:px-6">
-                <div className="container mx-auto text-xs text-muted-foreground">
-                    &copy; 2024 Cricket Trivia. All rights reserved.
-                </div>
-            </footer>
         </div>
     )
 }

@@ -1,16 +1,17 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const Team = require('./models/Team');
 const Match = require('./models/Match');
 const Tournament = require('./models/Tournament');
-const PORT = 3000;
+const PORT = 3000 || process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 
-mongoose.connect('mongodb://localhost:27017/webbuzz').then(() => {
+mongoose.connect(process.env.MONGO_URI).then(() => {
     console.log("connected to db");
 }).catch((err) => {
     console.log("error in connecting to db", err);
